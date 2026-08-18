@@ -57,3 +57,33 @@ lmenor = lambda x,y: f'o número menor é {x}' \
     if x < y else \
     f'Entre {x} e {y} o menor é {y}'
 print(lmenor(4, 2))
+
+#Map é uma funcionalidade do python que permite aplicar
+#uma função em todos os elementos de uma coleção
+
+def dobro(n: int) -> int:
+    return n * 2
+numeros = [33.5, 21, 3, 4, 5]
+
+#da maneira roots
+dobrados = []
+for n in numeros:
+    dobrados.append(dobro(n))
+print(numeros)
+print(dobrados)
+print('\nCom map')
+#com map
+#sintaxe map(função, iterável/coleção)
+#1o uso criando uma lista de números dobrados
+dobrados2 = list(map(dobro, numeros))
+print(dobrados2)
+#2o uso direto no print
+print(list(map(dobro, numeros))) #<= retorna um map object
+
+#utilizando o ldobro abaixo, como eu faria o map?
+ldobro = lambda n: n * 2
+dobrado3 = list(map(ldobro, numeros))
+print(dobrado3)
+
+#o jeito mais pythoneiro
+print(list(map((lambda n: n * 3), [23, 4, 867, - 4])))
